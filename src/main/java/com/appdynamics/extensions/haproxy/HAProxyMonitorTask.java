@@ -104,7 +104,7 @@ public class HAProxyMonitorTask implements AMonitorTaskRunnable {
             String line;
             while ((line = reader.readLine()) != null) {
                 Pattern p = Pattern.compile(",");
-                String[] currLine = p.split(line);
+                String[] currLine = p.split(line, -1);
                 List<String> row = new LinkedList<>();
                 for (String columnVal : currLine) {
                     row.add(columnVal);
